@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class Home extends BaseSeleniumPage {
     private int expectSum = 0;
@@ -32,13 +33,13 @@ public class Home extends BaseSeleniumPage {
     WebElement addToCart;
 
     @FindBy(xpath = "//a[contains(text(), 'HTC One M9')]")
-    WebElement phoneHTC;
+    WebElement phone;
 
     @FindBy(xpath = "//a[contains(text(), '2017 Dell 15.6 Inch')]")
-    WebElement laptopDell;
+    WebElement laptop;
 
     @FindBy(xpath = "//a[contains(text(), 'Apple monitor 24')]")
-    WebElement monitorApple;
+    WebElement monitor;
 
     @FindBy(xpath = "//ul[contains(@class, 'navbar-nav')]/li[4]/a")
     WebElement cart;
@@ -55,13 +56,15 @@ public class Home extends BaseSeleniumPage {
     }
 
     public Home CreateTicket () {
+        //List<WebElement> item = driver.findElements(By.xpath("//div[@id='tbodyid']/div"));
+
         //Добавление товаров в корзину
         home.click();
-        AddItem(phonesCategory, phoneHTC, By.xpath("//div[contains(@class, 'col-lg-4')][7]/div/div/h5"));
+        AddItem(phonesCategory, driver.findElement(By.xpath("//div[@id='tbodyid']/div[7]/div/div/h4/a")), By.xpath("//div[contains(@class, 'col-lg-4')][7]/div/div/h5"));
         home.click();
-        AddItem(laptopsCategory, laptopDell, By.xpath("//div[contains(@class, 'col-lg-4')][5]/div/div/h5"));
+        AddItem(laptopsCategory, driver.findElement(By.xpath("//div[@id='tbodyid']/div[5]/div/div/h4/a")), By.xpath("//div[contains(@class, 'col-lg-4')][5]/div/div/h5"));
         home.click();
-        AddItem(monitorsCategory, monitorApple, By.xpath("//div[contains(@class, 'col-lg-4')][1]/div/div/h5"));
+        AddItem(monitorsCategory, driver.findElement(By.xpath("//div[@id='tbodyid']/div[1]/div/div/h4/a")), By.xpath("//div[contains(@class, 'col-lg-4')][1]/div/div/h5"));
         home.click();
 
         //Переход к корзине в корзине

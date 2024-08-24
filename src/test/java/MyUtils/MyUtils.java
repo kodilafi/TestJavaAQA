@@ -10,4 +10,9 @@ public class MyUtils {
     public static final String USERNAME = "Аркадий";
 
     public static final String PASSWORD = "08761239";
+
+    @Attachment(value = "Информация:", type = "text/plain")
+    public static String TextLog(String message) {
+        return message;
+    }
 }
