@@ -1,7 +1,7 @@
 # Тестовое задание
-API тест на сайт [Reqres](https://reqres.in/), ссылка на папку с [тестами](https://github.com/kodilafi/TestJavaAQA/tree/main/src/test/java/APItestforReqres)
+API тест на сайт [Reqres](https://reqres.in/)
 
-ссылка на UI - [Demoblaze](https://www.demoblaze.com/)
+UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 
 
 # Стек используемых технологий
