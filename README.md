@@ -1,11 +1,12 @@
 # Тестовое задание
-API тест на сайт [Reqres](https://reqres.in/)
+
+## API тест на сайт [Reqres](https://reqres.in/)
 * [Кейс 1](src/test/java/APItestforReqres/RegisterTest/RegisterUser.java): Протестировать регистрацию пользователя в системе, необходимо создание 2 тестов: успешная регистрация с валидными данными и регистрация с ошибкой из-за отсутствия пароля и проверить, что статус-код в ответе 400.
 * [Кейс 2](src/test/java/APItestforReqres/GetTest/GetUser.java): Получить список пользователей страницы и убедиться, что email пользователей имеет окончание @reqres.in.
 * [Кейс 3](src/test/java/APItestforReqres/DeleteTest/DeleteUser.java): Удалить второго пользователя и проверить что статус-код 204.
 * [Кейс 4](src/test/java/APItestforReqres/UpdateTest/UpdateUserData.java): Обновить информацию о пользователе методом patch и сравнить дату обновления с текущей датой в системе.
 
-UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
+## UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 
 Кейс 1:
 * [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/LogInPage.java).
@@ -24,3 +25,4 @@ UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 * AllureReport
 * WebDriver
 * JUnit5
+* Faker
