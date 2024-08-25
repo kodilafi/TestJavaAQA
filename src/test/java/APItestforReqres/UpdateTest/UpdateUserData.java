@@ -9,7 +9,6 @@ import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 import static io.restassured.RestAssured.given;
 
@@ -30,8 +29,6 @@ public class UpdateUserData {
                 .extract().as(UpdatedUserPojo.class);
 
         Assertions.assertNotNull(result);
-
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
         Assertions.assertEquals(LocalDate.now().toString(), new SimpleDateFormat("yyyy-MM-dd").format(result.getUpdatedAt()));
 
