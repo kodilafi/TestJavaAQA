@@ -2,7 +2,6 @@ package UItestforDemoblaze;
 
 import MyUtils.BaseSeleniumPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Attachment;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;

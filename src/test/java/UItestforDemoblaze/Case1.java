@@ -1,36 +1,35 @@
 package UItestforDemoblaze;
 
-import MyUtils.BaseSeleniumPage;
-import MyUtils.MyUtils;
-import org.openqa.selenium.support.PageFactory;
+import io.qameta.allure.Description;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.Test;
 
-public class Case1 extends BaseSeleniumPage {
+@Owner("Дима")
+public class Case1 extends SeleniumDriverOptions {
     public static int expectSum = 0;
 
-    public Case1() {
-        driver.get(MyUtils.URL_DEMOBLASE);
-        PageFactory.initElements(driver, this);
-    }
-
-    public Case1 startTest () {
+    @Test
+    @Description("UI тесты selenium/selenide")
+    public void startTest () {
         //Регистрация
-        RegistrationPage registr = new RegistrationPage(driver);
+        SignInPage registr = new SignInPage();
         registr.SuccessfulRegistration();
 
         //Логин
-        LogInPage login = new LogInPage(driver);
+        LogInPage login = new LogInPage();
         login.SuccessfulLogin();
 
+        //Перестраховка
+        CartPage cartPage = new CartPage();
+        cartPage.DeleteCartItems();
+
         //Работа в каталоге
-        CatalogPage catalogPage = new CatalogPage(driver);
-        catalogPage.CreateTicket();
+        CatalogPage catalogPage = new CatalogPage();
+        catalogPage.AddItemsBlock();
 
         //Работа в корзине.
-        CartPage cartPage = new CartPage(driver);
-        cartPage.GoToCartPageAndComparisonPrice();
-        cartPage.CreateAnOrder();
-        cartPage.DateComparison();
-
-        return this;
+        cartPage.GoToCartPageAndComparisonPrice()
+                .CreateAnOrder()
+                .DateComparison();
     }
 }

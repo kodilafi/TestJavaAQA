@@ -1,7 +1,6 @@
 package MyUtils;
 
 import io.qameta.allure.Attachment;
-import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +20,6 @@ abstract public class BaseSeleniumPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
-    @Step("Создание скриншота")
     @Attachment(value = "{0}", type = "image/png")
     public static byte[] ScreenShot(String screenshotName) {
         TakesScreenshot ts = (TakesScreenshot) driver;
@@ -29,7 +27,6 @@ abstract public class BaseSeleniumPage {
         return screenshot;
     }
 
-    @Step("Создание скриншота")
     @Attachment(value = "Скриншот", type = "image/png")
     public static byte[] ScreenShot() {
         TakesScreenshot ts = (TakesScreenshot) driver;

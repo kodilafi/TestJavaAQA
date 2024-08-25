@@ -3,13 +3,12 @@ package UItestforDemoblaze;
 import MyUtils.*;
 import io.qameta.allure.Step;
 import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class RegistrationPage extends BaseSeleniumPage {
+public class SignInPage extends BaseSeleniumPage {
     @FindBy(xpath = "//ul[contains(@class, 'navbar-nav')]/li[8]/a")
     private WebElement signUp_OpenForm;
 
@@ -25,17 +24,13 @@ public class RegistrationPage extends BaseSeleniumPage {
     @FindBy(xpath = "//div[@id='signInModal']/div/div/div/button")
     private WebElement closeButton;
 
-    public RegistrationPage() {
+    public SignInPage() {
         driver.get(MyUtils.URL_DEMOBLASE);
         PageFactory.initElements(driver, this);
     }
 
-    public RegistrationPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-
     @Step("Регистрация.")
-    public void SuccessfulRegistration() {
+    public SignInPage SuccessfulRegistration() {
         //Открытие окна с регистрацией
         signUp_OpenForm.click();
 
@@ -57,5 +52,7 @@ public class RegistrationPage extends BaseSeleniumPage {
 
         //Снимок
         ScreenShot("Скриншот с заполненными полями из формы регистрации.");
+
+        return this;
     }
 }

@@ -2,7 +2,6 @@ package UItestforDemoblaze;
 
 import MyUtils.*;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -29,12 +28,8 @@ public class LogInPage extends BaseSeleniumPage {
         PageFactory.initElements(driver, this);
     }
 
-    public LogInPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-    }
-
     @Step("Логин.")
-    public void SuccessfulLogin() {
+    public LogInPage SuccessfulLogin() {
         //Логин на сайте.
         wait.until(ExpectedConditions.elementToBeClickable(logIn_OpenForm));
         logIn_OpenForm.click();
@@ -50,5 +45,7 @@ public class LogInPage extends BaseSeleniumPage {
 
         wait.until(ExpectedConditions.elementToBeClickable(nameOfUser));
         ScreenShot("Скриншот с результатом того, как выглядит окно главного меню, после успешного логина.");
+
+        return this;
     }
 }

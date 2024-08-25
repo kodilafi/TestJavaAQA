@@ -1,16 +1,16 @@
 package UItestforDemoblaze;
 
 import MyUtils.*;
-import com.github.javafaker.Faker;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.util.Random;
 
 @Owner("Дима")
 public class CatalogPage extends BaseSeleniumPage {
@@ -29,11 +29,12 @@ public class CatalogPage extends BaseSeleniumPage {
     @FindBy(xpath = "//a[contains(text(), 'Add to cart')]")
     private WebElement addToCart;
 
-    public CatalogPage(WebDriver driver) {
+    public CatalogPage() {
+        driver.get(MyUtils.URL_DEMOBLASE);
         PageFactory.initElements(driver, this);
     }
 
-    public void CreateTicket () {
+    public CatalogPage AddItemsBlock() {
         //Добавление товаров в корзину
         home.click();
         AddItem(phonesCategory);
@@ -42,13 +43,14 @@ public class CatalogPage extends BaseSeleniumPage {
         home.click();
         AddItem(monitorsCategory);
         home.click();
+
+        return this;
     }
 
     @Step("Добавляем в корзину по одному 'случайному' гаджету из каждой категории.")
     private void AddItem (WebElement category) {
         String priceExpect, priceActual;
         String categoryName = category.getText();
-        Faker faker = new Faker();
 
         //Переходим в нужную категорию.
         category.click();
@@ -56,11 +58,11 @@ public class CatalogPage extends BaseSeleniumPage {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+
         }
 
         //Ждём загрузки нужных элементов.
-        int random = faker.random().nextInt(1, driver.findElements(By.xpath("//div[@id='tbodyid']/div")).size());
+        int random = new Random().nextInt(driver.findElements(By.xpath("//div[@id='tbodyid']/div")).size()) + 1;
         WebElement item = driver.findElement(By.xpath("//div[@id='tbodyid']/div[" + random + "]/div/div/h4/a"));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='tbodyid']/div[" + random + "]/div/div/h5")));
         priceExpect = driver.findElement(By.xpath("//div[@id='tbodyid']/div[" + random + "]/div/div/h5")).getText();
@@ -81,10 +83,5 @@ public class CatalogPage extends BaseSeleniumPage {
         Case1.expectSum += Integer.parseInt(priceActual.replaceAll("\\D", ""));
 
         addToCart.click();
-    }
-
-    @Step("Сравниваем цену из общего списка и с карточки товара.")
-    public void ComparisonItemPrice() {
-
     }
 }
