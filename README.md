@@ -9,13 +9,13 @@
 ## UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 
 Кейс 1:
-* [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/RegistrationPage.java).
-* [Залогиниться с этими данными](src/test/java/UItestforDemoblaze/LogInPage.java).
-* [Добавить в корзину по одному любому гаджету из каждой категории](src/test/java/UItestforDemoblaze/CatalogPage.java).
-* [Сравнить цену из общего списка и с карточки товара](src/test/java/UItestforDemoblaze/CatalogPage.java).
-* [Перейти в корзину и убедиться, что общая цена посчитана верно](src/test/java/UItestforDemoblaze/CartPage.java).
-* [Оформить заказ](src/test/java/UItestforDemoblaze/CartPage.java).
-* [Убедиться что дата в конце заказа совпадает с датой в системе](src/test/java/UItestforDemoblaze/CartPage.java).
+1. [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/RegistrationPage.java).
+2. [Залогиниться с этими данными](src/test/java/UItestforDemoblaze/LogInPage.java).
+3. [Добавить в корзину по одному любому гаджету из каждой категории](src/test/java/UItestforDemoblaze/CatalogPage.java).
+4. [Сравнить цену из общего списка и с карточки товара](src/test/java/UItestforDemoblaze/CatalogPage.java).
+5. [Перейти в корзину и убедиться, что общая цена посчитана верно](src/test/java/UItestforDemoblaze/CartPage.java).
+6. [Оформить заказ](src/test/java/UItestforDemoblaze/CartPage.java).
+7. [Убедиться что дата в конце заказа совпадает с датой в системе](src/test/java/UItestforDemoblaze/CartPage.java).
 
 
 # Стек используемых технологий
