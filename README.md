@@ -25,4 +25,3 @@
 * AllureReport
 * WebDriver
 * JUnit5
-* Faker
