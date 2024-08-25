@@ -9,7 +9,7 @@
 ## UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 
 Кейс 1:
-1. [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/RegistrationPage.java).
+1. [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/SignInPage.java).
 2. [Залогиниться с этими данными](src/test/java/UItestforDemoblaze/LogInPage.java).
 3. [Добавить в корзину по одному любому гаджету из каждой категории](src/test/java/UItestforDemoblaze/CatalogPage.java).
 4. [Сравнить цену из общего списка и с карточки товара](src/test/java/UItestforDemoblaze/CatalogPage.java).
