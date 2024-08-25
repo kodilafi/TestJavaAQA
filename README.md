@@ -9,8 +9,8 @@
 ## UI тест на сайт [Demoblaze](https://www.demoblaze.com/)
 
 Кейс 1:
-* [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/LogInPage.java).
-* [Залогиниться с этими данными](src/test/java/UItestforDemoblaze/RegistrationPage.java).
+* [Зарегистрироваться под любыми данными](src/test/java/UItestforDemoblaze/RegistrationPage.java).
+* [Залогиниться с этими данными](src/test/java/UItestforDemoblaze/LogInPage.java).
 * [Добавить в корзину по одному любому гаджету из каждой категории](src/test/java/UItestforDemoblaze/CatalogPage.java).
 * [Сравнить цену из общего списка и с карточки товара](src/test/java/UItestforDemoblaze/CatalogPage.java).
 * [Перейти в корзину и убедиться, что общая цена посчитана верно](src/test/java/UItestforDemoblaze/CartPage.java).
